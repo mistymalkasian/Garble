@@ -18,6 +18,16 @@ namespace Garble.Migrations
                 .PrimaryKey(t => t.CustomerID);
             
             CreateTable(
+                "dbo.Employees",
+                c => new
+                    {
+                        EmployeeID = c.Int(nullable: false, identity: true),
+                        FirstName = c.String(),
+                        LastName = c.String(),
+                    })
+                .PrimaryKey(t => t.EmployeeID);
+            
+            CreateTable(
                 "dbo.AspNetRoles",
                 c => new
                     {
@@ -104,6 +114,7 @@ namespace Garble.Migrations
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.Employees");
             DropTable("dbo.Customers");
         }
     }

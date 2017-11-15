@@ -1,34 +1,35 @@
-﻿using System;
+﻿using Garble.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Garble.Models;
 
 namespace Garble.Controllers
 {
     public class CustomersController : Controller
     {
+        private ApplicationDbContext _context;
+
         // GET: Customers
-        public ActionResult Index(int? pageIndex, string sortBy)
+
+            public CustomersController()
         {
-            //if (!pageIndex.HasValue)
-            //    pageIndex = 1;
-
-            //if (String.IsNullOrWhiteSpace(sortBy))
-            //    sortBy = "Name";
-
-            //return Content(String.Format("pageIndex={0}&sortBy={1}", pageIndex, sortBy));
-
-            var Customer = new Customer() { FirstName = "Misty", LastName = "Malkasian" };
-            return View(Customer);
+            _context = new ApplicationDbContext();
         }
 
-        //public ActionResult Edit(int id)
-        //{
-        //    return Content("id = " + id);
-        //}
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
 
-       
+        public ActionResult New()
+        {
+            return View();
+        }
+        public ViewResult Index()
+        {
+            return View();
+        }
     }
 }
