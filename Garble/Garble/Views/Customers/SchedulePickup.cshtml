@@ -1,8 +1,18 @@
-﻿
+﻿@using Garble.Models;
+
+@model Customer
+
 @{
     ViewBag.Title = "SchedulePickup";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Schedule A Pickup</h2>
-
+<br />
+<h4>Here, you can schedule a day when you'd like to receive a garbage pickup.</h4>
+<br />
+<br />
+@Html.DropDownList("PickupDay",
+                    new SelectList(Enum.GetValues(typeof(DayOfWeek))),
+                    "Select New Pickup Day",
+                    new { @class = "form-control" })
