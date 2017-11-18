@@ -33,6 +33,12 @@ namespace Garble.Controllers
             
             return View();
         }
+
+        public ActionResult PickupLog()
+        {
+            return View();
+            
+        }
         public ViewResult Index()
         {
             return View();
