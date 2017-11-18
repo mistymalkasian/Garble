@@ -27,6 +27,12 @@ namespace Garble.Controllers
         {
             return View();
         }
+
+        public ActionResult SchedulePickup()
+        {
+            
+            return View();
+        }
         public ViewResult Index()
         {
             return View();
