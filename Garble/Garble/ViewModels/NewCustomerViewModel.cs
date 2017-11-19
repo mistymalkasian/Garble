@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Garble.ViewModels
 {
-    public class CustomerFormViewModel
+    public class NewCustomerViewModel
     {
 
         public Customer Customer { get; set; }

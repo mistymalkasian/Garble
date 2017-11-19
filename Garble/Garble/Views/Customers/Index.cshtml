@@ -31,6 +31,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @*@Html.ActionLink(item.FirstName, "Edit", "Customers",  new { id = item.CustomerID})*@
             @Html.DisplayFor(modelItem => item.FirstName)
         </td>
         <td>

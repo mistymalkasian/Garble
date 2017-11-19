@@ -20,25 +20,14 @@ namespace Garble.Models
         public string LastName { get; set; }
 
         [Required]
-        public PickupDay? DayofWeek { get; set; }
-
-        public enum PickupDay
-        {
-            Sunday,
-            Monday,
-            Tuesday,
-            Wednesday,
-            Thursday,
-            Friday,
-            Saturday
-        }
+        public DayOfWeek PickupDay { get; set; }
 
         public DateTime? VacationStartDate { get; set; }
         public DateTime? VacationEndDate { get; set; }
 
         public string Address { get; set; }
 
-        public int Zip { get; set; }
+        public int? Zip { get; set; }
 
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Garble.Models;
+using Garble.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,8 +26,24 @@ namespace Garble.Controllers
 
         public ActionResult New()
         {
+           
 
             return View();
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var customer = _context.Customers.SingleOrDefault(c => c.CustomerID == id);
+
+            if (customer == null)
+                return HttpNotFound();
+
+            var viewModel = new NewCustomerViewModel
+            {
+                Customer = customer,
+
+            };
+            return View("New", viewModel);
         }
 
         public ActionResult SchedulePickup()
@@ -42,26 +59,21 @@ namespace Garble.Controllers
         }
 
         [HttpPost]
-        //public ActionResult Save(Customer customer)
-        //{
-        //    if(!ModelState.IsValid)
-        //    {
-        //        var viewModel = new CustomerFormViewModel()
-        //        {
-        //            Customer = customer
-        //        };
-        //        return View("CustomerForm", viewModel);
-        //    }
+        public ActionResult Save(Customer customer)
+        {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new CustomerFormViewModel()
+                {
+                    Customer = customer
+                };
+                return View("CustomerForm", viewModel);
+            }
 
+            _context.SaveChanges();
 
-
-
-
-
-        //    _context.SaveChanges();
-
-        //    return View();
-        //}
+            return View();
+        }
         public ViewResult Index()
         {
             var customers = _context.Customers.ToList();
@@ -82,6 +94,15 @@ namespace Garble.Controllers
             {
                 return View(customer);
             }
+        }
+
+        [HttpPost]
+        public ActionResult Create(Customer customer)
+        {
+            _context.Customers.Add(customer);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Customers");
         }
 
     }
