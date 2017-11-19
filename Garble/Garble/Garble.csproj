@@ -234,6 +234,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -351,6 +352,14 @@
     <Content Include="Views\Customers\New.cshtml" />
     <Content Include="Views\Customers\SchedulePickup.cshtml" />
     <Content Include="Views\Customers\PickupLog.cshtml" />
+    <Content Include="Views\Customers\ScheduleVacation.cshtml" />
+    <Content Include="Views\Employees\MapRoute.cshtml" />
+    <Content Include="Views\Employees\ViewPickupsByZip.cshtml" />
+    <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Employees\Details.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

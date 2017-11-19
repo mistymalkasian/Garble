@@ -58,6 +58,11 @@ namespace Garble.Controllers
             
         }
 
+        public ActionResult ScheduleVacation()
+        {
+            return View();
+        }
+
         [HttpPost]
         public ActionResult Save(Customer customer)
         {
