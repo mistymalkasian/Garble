@@ -123,5 +123,20 @@ namespace Garble.Controllers
             }
             base.Dispose(disposing);
         }
-    }
-}
+
+        public ActionResult ViewPickupsByZip()
+        {
+            var customers = from c in db.Customers
+                           select c;
+          
+                    customers = customers.OrderByDescending(s => s.Zip);
+
+            return View(customers.ToList());
+        }
+
+        public ActionResult MapRoute()
+        {
+            return View();
+        }
+     }       
+  }

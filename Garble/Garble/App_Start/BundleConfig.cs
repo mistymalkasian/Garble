@@ -24,7 +24,7 @@ namespace Garble
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap-sketchy.css",
                       "~/Content/site.css"));
         }
     }
