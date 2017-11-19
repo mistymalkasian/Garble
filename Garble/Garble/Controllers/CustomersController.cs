@@ -25,6 +25,7 @@ namespace Garble.Controllers
 
         public ActionResult New()
         {
+
             return View();
         }
 
@@ -41,12 +42,26 @@ namespace Garble.Controllers
         }
 
         [HttpPost]
-        public ActionResult SaveChanges()
-        {
-            _context.SaveChanges();
+        //public ActionResult Save(Customer customer)
+        //{
+        //    if(!ModelState.IsValid)
+        //    {
+        //        var viewModel = new CustomerFormViewModel()
+        //        {
+        //            Customer = customer
+        //        };
+        //        return View("CustomerForm", viewModel);
+        //    }
 
-            return View();
-        }
+
+
+
+
+
+        //    _context.SaveChanges();
+
+        //    return View();
+        //}
         public ViewResult Index()
         {
             var customers = _context.Customers.ToList();
