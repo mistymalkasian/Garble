@@ -22,6 +22,7 @@ namespace Garble.Models
     {
         public DbSet<Customer>Customers { get; set; }
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<PastTransaction> PastTransactions { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

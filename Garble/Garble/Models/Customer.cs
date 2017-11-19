@@ -22,7 +22,10 @@ namespace Garble.Models
         [Required]
         public DayOfWeek PickupDay { get; set; }
 
+        [DataType(DataType.Date)]
         public DateTime? VacationStartDate { get; set; }
+
+        [DataType(DataType.Date)]
         public DateTime? VacationEndDate { get; set; }
 
         public string Address { get; set; }

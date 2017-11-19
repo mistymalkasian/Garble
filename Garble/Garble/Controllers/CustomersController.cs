@@ -46,12 +46,14 @@ namespace Garble.Controllers
             return View("New", viewModel);
         }
 
-        public ActionResult SchedulePickup()
-        {
-            //_context.SaveChanges();
+        //[HttpPost]
+        //public ActionResult SchedulePickup(Customer customer)
+        //{
+        //    _context.Customers.Add(customer);
+        //    _context.SaveChanges();
 
-            return View();
-        }
+        //    return RedirectToAction("Index", "Customers");
+        //}
 
         public ActionResult PickupLog()
         {
@@ -109,6 +111,11 @@ namespace Garble.Controllers
             _context.SaveChanges();
 
             return RedirectToAction("Index", "Customers");
+        }
+
+        public ViewResult SchedulePickup()
+        {
+            return View();
         }
 
     }

@@ -1,10 +1,28 @@
-﻿
+﻿@model Garble.Models.Customer
 @{
     ViewBag.Title = "ScheduleVacation";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <br />
-<h2>Schedule Vacation Lapse</h2>
+<h2>Schedule Vacation</h2>
 <br />
 <h4> Here, you can specify when you're going to be away, so that we will not come by to make a pickup.</h4>
+<br />
+
+@using (Html.BeginForm("Create", "Customers"))
+{
+    <div class="form-group">
+        <label for="FirstName">Vacation Start Date</label>
+        @Html.TextBoxFor(m => m.VacationStartDate, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label for="LastName">Vacation End Date</label>
+        @Html.TextBoxFor(m => m.VacationEndDate, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+}
+
+
