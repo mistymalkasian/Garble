@@ -9,10 +9,17 @@
 
 <h2>Schedule A Pickup</h2>
 <br />
-<h4>Here, you can schedule a day when you'd like to receive a garbage pickup.</h4>
+<h4>Here, you can schedule the day of the week when you'd like to receive a garbage pickup, or change your current selected day.</h4>
 <br />
 <br />
 @Html.DropDownList("PickupDay",
                     new SelectList(Enum.GetValues(typeof(DayOfWeek))),
                     "Select New Pickup Day",
                     new { @class = "form-control" })
+<br /><br /><br />
+
+<div class="form-group">
+    <div class="col-md-offset-1 col-md-10">
+        <input type="submit" value="Submit Changes" class="btn btn-default" onclick="" />
+    </div>
+</div>

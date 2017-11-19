@@ -39,9 +39,35 @@ namespace Garble.Controllers
             return View();
             
         }
-        public ViewResult Index()
+
+        [HttpPost]
+        public ActionResult SaveChanges()
         {
+            _context.SaveChanges();
+
             return View();
         }
+        public ViewResult Index()
+        {
+            var customers = _context.Customers.ToList();
+
+            return View(customers);
+        }
+
+        public ActionResult Details(int id)
+        {
+            var customer = _context.Customers.SingleOrDefault(c => c.CustomerID == id);
+
+            if (customer == null)
+            {
+                return HttpNotFound();
+            }
+
+            else
+            {
+                return View(customer);
+            }
+        }
+
     }
 }

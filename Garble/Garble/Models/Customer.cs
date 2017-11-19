@@ -20,7 +20,7 @@ namespace Garble.Models
         public string LastName { get; set; }
 
         [Required]
-        public PickupDay DayofWeek { get; set; }
+        public PickupDay? DayofWeek { get; set; }
 
         public enum PickupDay
         {
