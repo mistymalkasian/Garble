@@ -1,7 +1,4 @@
-﻿<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/themes/base/jquery-ui.css"
-      rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=drawing,geometry"></script>
- 
+﻿ 
 @{
     ViewBag.Title = "MapRoute";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -11,10 +8,35 @@
 <h2>Map Route</h2>
 <br />
 
-<style>
-    #mapDiv img {
-        max-width: none !important;
-    }
-</style>
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
 
+    <div id="map"></div>
+    <script>
+      function initMap() {
+          var milwaukee = { lat: 43.038902, lng: -87.906471 };
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: milwaukee
+        });
+        var marker = new google.maps.Marker({
+          position: milwaukee,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJqcaPRxraQdbID5pGa6sryPdFtdZ39AU&callback=initMap">
+    </script>
+</body>
+</html>
 
