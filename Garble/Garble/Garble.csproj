@@ -294,6 +294,7 @@
     <Compile Include="ViewModels\NewCustomerViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-minty.css" />
     <Content Include="Content\bootstrap-sketchy.css" />
     <Content Include="Content\bootstrap-superhero.css" />
     <Content Include="Content\bootstrap.css" />
